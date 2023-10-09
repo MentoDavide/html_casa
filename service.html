@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="service.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="contact.html">Contact us</a></li>  
+      <li>
+        <a href="last.html">
+          <img src="images/backet.png" class="nav-bar" onclick="vaiallapagina()">
+        </a>
+      </li>
+    </ul>
+  </nav>>
+    <div class="asci">
+      <pre>
+         ______     ______     ______     __   __   __     ______     ______    
+        /\  ___\   /\  ___\   /\  == \   /\ \ / /  /\ \   /\  ___\   /\  ___\   
+        \ \___  \  \ \  __\   \ \  __<   \ \ \'/   \ \ \  \ \ \____  \ \  __\   
+         \/\_____\  \ \_____\  \ \_\ \_\  \ \__|    \ \_\  \ \_____\  \ \_____\ 
+          \/_____/   \/_____/   \/_/ /_/   \/_/      \/_/   \/_____/   \/_____/ 
+                                                                                                                                                          
+        </pre>
+    </div>
+    <div class="prodotti">
+      <div class="prodotto">
+        <img src="images/prog1.png" alt="Prodotto 1" class="immagine-prodotto">
+        <br>
+        <b>
+          <h3>FULL COURSE HTML,JS,CSS</h3>
+        </b>
+        <br>
+        <button onclick="aggiungiAlCarrello('CORSO WEB DEVELOPER')">Add to Cart</button>
+      </div>
+      
+<br>
+
+      <div class="prodotto">
+        <img src="images/prog2.png" alt="Prodotto 2" class="immagine-prodotto">
+        <br>  
+        <b>
+          <h3>FULL PHOTOSHOP COURSE</h3>
+        </b>
+        <br>
+        <button onclick="aggiungiAlCarrello('CORSO PHOTOSHOP')">Add to Cart</button>
+      </div>
+      
+    </div>
+
+    <div class="button">
+      <button onclick="confermaOrdine()">Confirm order</button>
+    </div>
+      <script src="script.js"></script>
+</body>
+</html>

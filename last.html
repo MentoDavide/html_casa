@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Carrello</title>
+  <link rel="stylesheet" href="last.css">
+</head>
+<body>
+  <nav>
+    <ul>
+      <li><a href="home.html">Home</a></li>
+      <li><a href="service.html">Service</a></li>
+      <li><a href="contact.html">Contact us</a></li>  
+      <li>
+        <a href="last.html">
+          <img src="images/backet.png" class="nav-bar" ">
+        </a>
+      </li>
+    </ul>
+  </nav>
+    <div class="asci">
+      <pre>
+
+         ______     ______     ______     __  __     ______     ______  
+        /\  == \   /\  __ \   /\  ___\   /\ \/ /    /\  ___\   /\__  _\ 
+        \ \  __<   \ \  __ \  \ \ \____  \ \  _"-.  \ \  __\   \/_/\ \/ 
+         \ \_____\  \ \_\ \_\  \ \_____\  \ \_\ \_\  \ \_____\    \ \_\ 
+          \/_____/   \/_/\/_/   \/_____/   \/_/\/_/   \/_____/     \/_/ 
+                                                                        
+         
+      </pre>
+    </div>
+
+  
+  <ul id="elenco-carrello">
+    <!-- Gli elementi del carrello saranno inseriti qui -->
+  </ul>
+
+  <button onclick="effettuaOrdine()" class="button-order">Effettua Ordine</button>
+
+  <button onclick="annullaOrdine()" class="button-order">Annulla Ordine</button>
+
+<script>
+      function effettuaOrdine() {
+    const elencoCarrello = document.getElementById('elenco-carrello');
+    if (elencoCarrello.children.length === 0) {
+      alert('Il carrello è vuoto. Aggiungi prodotti al carrello prima di effettuare un ordine.');
+    } else {
+      const conferma = confirm('Conferma l\'ordine?');
+      if (conferma) {
+        localStorage.removeItem('carrello');
+        alert('Ordine effettuato con successo! Grazie per il tuo acquisto.');
+        window.location.href = 'ordini.html';
+      }
+    }
+  }
+
+  // Recupera e visualizza i prodotti nel carrello
+  const carrello = JSON.parse(localStorage.getItem('carrello'));
+  const elencoCarrello = document.getElementById('elenco-carrello');
+
+  if (carrello && carrello.length > 0) {
+    carrello.forEach(prodotto => {
+      const nuovoElemento = document.createElement('li');
+      nuovoElemento.textContent = prodotto;
+      elencoCarrello.appendChild(nuovoElemento);
+    });
+
+    function annullaOrdine() {
+  const conferma = confirm('Sei sicuro di voler annullare l\'ordine? Questa azione non può essere annullata.');
+  if (conferma) {
+    localStorage.removeItem('carrello');
+    alert('Ordine annullato con successo.');
+    window.location.reload();  // Ricarica la pagina per aggiornare l'elenco del carrello
+  }
+}
+}
+
+</script>
+</body>
+</html>
